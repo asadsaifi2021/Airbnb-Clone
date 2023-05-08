@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { IconType } from "react-icons";
-
+import { FaBath,FaBed, FaUsers } from 'react-icons/fa';
 import useCountries from "@/app/hooks/useCountries";
 import { SafeUser } from "@/app/types";
 
@@ -38,7 +38,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
 }) => {
   const { getByValue } = useCountries();
 
-  const coordinates = getByValue(locationValue)?.latlng
+  const coordinates = getByValue(locationValue)?.latlng;
 
   return ( 
     <div className="col-span-4 flex flex-col gap-8">
@@ -66,13 +66,13 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
           "
         >
           <div>
-            {guestCount} guests
+            <FaUsers/>{guestCount} Guests
           </div>
           <div>
-            {roomCount} rooms
+            <FaBed/>{roomCount} Rooms
           </div>
           <div>
-            {bathroomCount} bathrooms
+          <FaBath/>{bathroomCount} Bathrooms
           </div>
         </div>
       </div>
