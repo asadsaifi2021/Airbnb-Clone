@@ -4,6 +4,7 @@ import axios from "axios";
 import { AiFillGithub } from "react-icons/ai";
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
+import { BsFacebook } from "react-icons/bs";
 import { useCallback, useState } from "react";
 import { toast } from "react-hot-toast";
 import { 
@@ -98,6 +99,12 @@ const RegisterModal= () => {
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
       <hr />
+      <Button 
+        outline 
+        label="Continue with Facebook"
+        icon={BsFacebook}
+        onClick={() => signIn('facebook')} 
+      />
       <Button 
         outline 
         label="Continue with Google"
